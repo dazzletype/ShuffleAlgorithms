@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShuffleAlgorithms", "ShuffleAlgorithms\ShuffleAlgorithms.csproj", "{BFB72291-CB6A-452D-B925-67D3848FE2A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShuffleAlgorithmTests", "ShuffleAlgorithmTests\ShuffleAlgorithmTests.csproj", "{523827D5-C772-4E37-B13F-CBE11AE72451}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{84E076AC-3512-488B-AECC-F7C303EEB513}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		ShuffleAlgorithms.vsmdi = ShuffleAlgorithms.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ShuffleAlgorithms.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFB72291-CB6A-452D-B925-67D3848FE2A5}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{BFB72291-CB6A-452D-B925-67D3848FE2A5}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{BFB72291-CB6A-452D-B925-67D3848FE2A5}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{BFB72291-CB6A-452D-B925-67D3848FE2A5}.Debug|x86.ActiveCfg = Debug|x86
+		{BFB72291-CB6A-452D-B925-67D3848FE2A5}.Debug|x86.Build.0 = Debug|x86
+		{BFB72291-CB6A-452D-B925-67D3848FE2A5}.Release|Any CPU.ActiveCfg = Release|x86
+		{BFB72291-CB6A-452D-B925-67D3848FE2A5}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{BFB72291-CB6A-452D-B925-67D3848FE2A5}.Release|Mixed Platforms.Build.0 = Release|x86
+		{BFB72291-CB6A-452D-B925-67D3848FE2A5}.Release|x86.ActiveCfg = Release|x86
+		{BFB72291-CB6A-452D-B925-67D3848FE2A5}.Release|x86.Build.0 = Release|x86
+		{523827D5-C772-4E37-B13F-CBE11AE72451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{523827D5-C772-4E37-B13F-CBE11AE72451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{523827D5-C772-4E37-B13F-CBE11AE72451}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{523827D5-C772-4E37-B13F-CBE11AE72451}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{523827D5-C772-4E37-B13F-CBE11AE72451}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{523827D5-C772-4E37-B13F-CBE11AE72451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{523827D5-C772-4E37-B13F-CBE11AE72451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{523827D5-C772-4E37-B13F-CBE11AE72451}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{523827D5-C772-4E37-B13F-CBE11AE72451}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{523827D5-C772-4E37-B13F-CBE11AE72451}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
