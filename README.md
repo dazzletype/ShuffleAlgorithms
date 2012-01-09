@@ -1,4 +1,5 @@
-# Shuffle Algorithms
+Shuffle Algorithms
+==================
 
 ## Description
 A program that generates a list of 10,000 numbers in random order each time it is run. Each number in the list must be unique and be between 1 and 10,000 (inclusive)
@@ -8,11 +9,12 @@ A program that generates a list of 10,000 numbers in random order each time it i
 - Unit Tests
 
 
-## Synopsis
-Usage: shufflealgorithms.exe [supressoutout]
+## Usage
 
-Options:
- --suppressoutput	Include the the shuffled list in the output
+    shufflealgorithms.exe [supressoutout]
+
+
+    Options:  --suppressoutput	Include the the shuffled list in the output
  
  
 ## Requirements
