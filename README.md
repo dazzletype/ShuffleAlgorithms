@@ -13,8 +13,8 @@ A program that generates a list of 10,000 numbers in random order each time it i
 
     shufflealgorithms.exe [supressoutout]
 
-
-    Options:  --suppressoutput	Include the the shuffled list in the output
+Options
+    --suppressoutput	Include the the shuffled list in the output
  
  
 ## Requirements
