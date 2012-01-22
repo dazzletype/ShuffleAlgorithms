@@ -33,5 +33,19 @@ namespace ShuffleAlgorithms
             foreach (var element in array)
                 Console.WriteLine(element);
         }
+
+
+        /// <summary>
+        /// Swaps two elements in an integer array
+        /// </summary>
+        /// <param name="array">Integer array</param>
+        /// <param name="indexOne">first index</param>
+        /// <param name="indexTwo">second index</param>
+        public static void Swap(int[] array, int indexOne, int indexTwo)
+        {
+            int temp = array[indexOne]; 
+            array[indexOne] = array[indexTwo]; 
+            array[indexTwo] = temp; 
+        }
     }
 }

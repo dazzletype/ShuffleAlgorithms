@@ -29,9 +29,9 @@ namespace ShuffleAlgorithms
 
             Console.WriteLine("Comparison of different shuffling algorithms:\r\n\r\n");
 
-            PrintExecutionSummary("Brute Force", new AlgorithmDelegate(Algorithms.BruteForceShuffle), suppressOutput);
-            PrintExecutionSummary("Shuffle List", new AlgorithmDelegate(Algorithms.ShuffleList), suppressOutput);
-            PrintExecutionSummary("Fisher-Yates", new AlgorithmDelegate(Algorithms.FisherYatesShuffle), suppressOutput);
+            PrintExecutionSummary("Brute Force", Algorithms.BruteForceShuffle, suppressOutput);
+            PrintExecutionSummary("Shuffle List", Algorithms.ShuffleList, suppressOutput);
+            PrintExecutionSummary("Fisher-Yates", Algorithms.FisherYatesShuffle, suppressOutput);
         }
 
 
@@ -51,15 +51,15 @@ namespace ShuffleAlgorithms
             Console.WriteLine(String.Format("Results for the {0} algorithm:", algorithmDescription));
 
             // determine length of time required to process algorithm
-            DateTime Start = DateTime.Now;
+            DateTime timerStart = DateTime.Now;
             algorithmResults = algorithm(ElementCount);
-            TimeSpan Elapsed = DateTime.Now - Start;
+            TimeSpan timerElapsed = DateTime.Now - timerStart;
             
             if (suppressListDisplay)
                 Utils.PrintArray(algorithmResults);
             
             Console.WriteLine("---------------------------------------------------------");
-            Console.WriteLine("Time required to process the {0} algorithm: {1} ms\r\n", algorithmDescription, Elapsed.Milliseconds);
+            Console.WriteLine("Time required to process the {0} algorithm: {1} ms\r\n", algorithmDescription, timerElapsed.Milliseconds);
 
             Console.WriteLine("Press any key for the next test");
             Console.ReadKey();

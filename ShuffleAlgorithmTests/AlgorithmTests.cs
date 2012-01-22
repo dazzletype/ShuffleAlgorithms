@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ShuffleAlgorithms;
 
@@ -8,7 +9,7 @@ namespace ShuffleAlgorithmTests
     /// Unit Tests for Fisher Yates Algorithms
     /// </summary>
     [TestClass]
-    public class FisherYatesTests
+    public class AlgorithmTests
     {
         private const int ElementCount = 10000;
         private static int[] fisherYatesShuffleResults;
@@ -28,7 +29,7 @@ namespace ShuffleAlgorithmTests
         /// The resulting list should always contain the number 1
         /// </summary>
         [TestMethod]
-        public void FisherYatesShouldContainOne()
+        public void ShuffledListContainsNumberOne()
         {
             Assert.IsTrue(fisherYatesShuffleResults.Contains(1));
         }
@@ -38,7 +39,7 @@ namespace ShuffleAlgorithmTests
         /// The list should always contain the very last number
         /// </summary>
         [TestMethod]
-        public void FisherYatesShouldContainLastElement()
+        public void ShuffledListContainsLastElement()
         {
             Assert.IsTrue(fisherYatesShuffleResults.Contains(ElementCount));
         }
@@ -48,7 +49,7 @@ namespace ShuffleAlgorithmTests
         /// The list should always contain a number of elements equivalent to the last number
         /// </summary>
         [TestMethod]
-        public void FisherYatesShouldHaveTheCorrectElementCount()
+        public void ShuffledListHasCorrectElementCount()
         {
             Assert.IsTrue(fisherYatesShuffleResults.Count() == ElementCount);
         }
@@ -57,7 +58,7 @@ namespace ShuffleAlgorithmTests
         /// The list should not contain a value larger than the last number
         /// </summary>
         [TestMethod]
-        public void FisherYatesShouldNotExceedUpperBounds()
+        public void ShuffledListShouldNotExceedUpperBounds()
         {
             Assert.IsFalse(fisherYatesShuffleResults.Contains(ElementCount + 1));
         }
@@ -65,12 +66,47 @@ namespace ShuffleAlgorithmTests
 
         /// <summary>
         /// A comprehensive test to insure the list includes every unique value from 1..N. 
-        /// Test Ignored for now unless unit test performance is secondary to precision
         /// </summary>
-        [Ignore]
-        public void FisherYatesIncludesEverySingleNumber()
+        [TestMethod]
+        public void ShuffledListIncludesEverySingleNumber()
         {
             Assert.IsTrue(TestHelpers.ListContainsAllUniqueElements(fisherYatesShuffleResults));
+        }
+
+
+        /// <summary>
+        /// Tests to ensure a truly random set of results are produced. 
+        /// In a set of 3 shuffled numbers (1, 2, 3), the 2 should statistically be shuffled to position 1 nearly 33.3% of the time given enough runs
+        /// </summary>
+        [TestMethod]
+        public void ResultsAreTrulyRandom()
+        {
+            const int algorithmRunCount = 1000000;
+            const int elementSize = 3;
+            List<int[]> resultsList = new List<int[]>();
+
+            // frequency the number '2' being in position one should be very close to 33.3% given enough runs
+            const decimal randomLowerThresholdPercent = 33.1M;
+            const decimal randomUpperThresholdPercent = 33.5M;
+            decimal actualOccurance = 0;
+            decimal occurancePercent;
+            
+            for (int i = 0; i < algorithmRunCount; i++)
+            {
+                int[] results = Algorithms.FisherYatesShuffle(elementSize);
+                resultsList.Add(results);
+            }
+
+            foreach (var intse in resultsList)
+            {
+                if (intse[0] == 2)
+                    actualOccurance++;
+            }
+
+            occurancePercent = (actualOccurance / algorithmRunCount) * 100;
+
+            Assert.IsTrue(occurancePercent > randomLowerThresholdPercent && occurancePercent < randomUpperThresholdPercent);
+
         }
 
 

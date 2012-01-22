@@ -18,7 +18,7 @@ namespace ShuffleAlgorithmTests
         {
             orderedList = Utils.CreateSequentialArray(ElementCount);
         }
-        
+
 
         [TestMethod]
         public void CreateSequentialArrayShouldContainCorrectNumberOfElements()
@@ -39,7 +39,5 @@ namespace ShuffleAlgorithmTests
         {
             Assert.IsTrue(orderedList[ElementCount - 1] == ElementCount);
         }
-        
-        public TestContext TestContext { get; set; }
     }
 }
